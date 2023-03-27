@@ -22,7 +22,7 @@ public class SecurityConfigurer {
     public static final String[] WHITE_LIST = {
             "/css/**",
             "/js/**",
-            "/home",
+            "/main",
             "/auth/login",
             "/upload",
             "/auth/register"
@@ -53,7 +53,7 @@ public class SecurityConfigurer {
                                 .loginProcessingUrl("/auth/login")
                                 .usernameParameter("uname")
                                 .passwordParameter("pswd")
-                                .defaultSuccessUrl("/home2", false)
+                                .defaultSuccessUrl("/main", false)
                                 .failureHandler(authenticationFailureHandler)
                 )
                 .logout(httpSecurityLogoutConfigurer ->

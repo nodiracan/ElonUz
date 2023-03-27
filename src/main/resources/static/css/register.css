@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #2c3034;
+}
+
+.form {
+    position: absolute;
+    border-radius: 7px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: white;
+    box-shadow: 5px 5px 10px 5px #babbbc;
+}
+
+.form .tab-header {
+    height: 50px;
+    line-height: 50px;
+}
+
+.form .tab-header > div {
+    width: 50%;
+    float: left;
+    text-align: center;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+.form .tab-header > div.active {
+    background: white;
+    color: black;
+}
+
+.form .tab-content {
+    padding: 20px;
+}
+
+.form .tab-content .form-element{
+    margin: 10px ;
+}
+.form .tab-content .form-element input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form .tab-content .form-element input [type = "checkbox"]{
+    width: 30px;
+    margin: 8px 8px 8px -5px;
+}
+
+.form .tab-content .form-element label{
+    color: black;
+}
+.form .tab-content .form-element button{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form .tab-content > div.active{
+    display: block;
+}
+.form .tab-content > div{
+    display: none;
+}
+
+
+
+
+
+
+

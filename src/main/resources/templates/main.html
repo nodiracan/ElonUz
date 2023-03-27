@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+<head th:replace="~{fragments :: head(~{::title},~{::link})}">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+        h1 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<section th:replace="fragments.html :: navbar"></section>
+<div style="padding-top: 150px;">
+    <div class="center-text">
+        <div class="my-element p-md-1">
+            <h1>- The easiest way to find Work and Works with ELON uz</h1>
+        </div>
+    </div>
+</div>
+<section th:replace="fragments :: js_links"></section>
+</body>
+</html>

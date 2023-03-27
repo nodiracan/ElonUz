@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+<head th:replace="~{fragments :: head(~{::title},~{::link})}">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <title>Register Page</title>
+
 </head>
 <body>
-<p>Dear [[name]],</p>
-<p>Thank you for registering with our website. To verify your email address, please click on the following link:</p>
-<a href="[[verificationLink]]">Verify Email</a>
-<p>Best regards,<br>My Website Team</p>
+<section th:replace="fragments.html :: navbar"></section>
+<div>
+    <form method="post" th:action="@{/auth/register}">
+        <div class="form">
+            <div class="tab-header">
+                <div class="active">Applicant</div>
+                <div>Employer</div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-body active">
+                    <div class="form-element">
+                        <label>
+                            <input type="text" placeholder="username" name="username">
+                        </label>
+                    </div>
+                    <div class="form-element">
+                        <label for="email"></label><input type="text" placeholder="name@email.com" id="email" name="email">
+                    </div>
+                    <div class="form-element">
+                        <label>
+                            <input type="password" placeholder="*****" name="password">
+                        </label>
+                    </div>
+                    <input type="hidden" id="role_user" name="role" value="USER"/>
+                    <div class="form-element">
+                        <button type="submit">Sign Up as Applicant</button>
+                    </div>
+                </div>
+                <div class="tab-body">
+                    <div class="form-element">
+                        <label>
+                            <input type="text" placeholder="username" name="username">
+                        </label>
+                    </div>
+                    <div class="form-element">
+                        <label>
+                            <input type="text" placeholder="name@email.com" name="email">
+                        </label>
+                    </div>
+                    <div class="form-element">
+                        <label>
+                            <input type="password" placeholder="*****" name="password">
+                        </label>
+                    </div>
+                    <input type="hidden" id="role_emp" name="role" value="EMPLOYER"/>
+                    <div class="form-element">
+                        <button type="submit">Sign Up as Employer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/js/register.js"></script>
+<section th:replace="fragments :: js_links"></section>
 </body>
 </html>

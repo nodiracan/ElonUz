@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+<head th:replace="~{fragments :: head(~{::title},~{::link})}">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login Page</title>
+
 </head>
 <body>
+<div>
+    <form>
 
+    </form>
+</div>
 </body>
 </html>

@@ -1,13 +1,12 @@
 package com.example.elonuz.domains;
 
+import com.example.elonuz.enums.Role;
 import com.example.elonuz.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -29,14 +28,9 @@ public class User extends Auditable{
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
-    )
-    private Set<Role> roles ;
+    @Builder.Default
+    @Enumerated(EnumType.STRING)
+    private Role role = Role.USER;
 
     @Builder.Default
     @Enumerated(EnumType.STRING)
